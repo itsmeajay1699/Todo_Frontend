@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { useLogout, useUser } from './api'
 
-const GUEST_HINT = 'Tasks are saved in this browser only.'
+const GUEST_HINT = 'Only this browser can see your tasks until you sign up.'
 const avatarClass =
   'flex size-8 items-center justify-center rounded-full bg-neutral-bg text-meta font-semibold text-fg-secondary uppercase outline-none hover:bg-[#E5E7EB] focus-visible:ring-2 focus-visible:ring-primary/30'
 

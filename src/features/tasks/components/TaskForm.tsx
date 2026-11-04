@@ -87,7 +87,7 @@ export function TaskForm({ task, defaultDate, submitLabel, onSubmit, onCancel }:
 
         <div className="grid grid-cols-[1fr_120px] gap-3">
           <div>
-            <Label htmlFor="task-date">Date</Label>
+            <Label htmlFor="task-date">Due date</Label>
             <Controller
               control={control}
               name="date"
@@ -127,7 +127,7 @@ export function TaskForm({ task, defaultDate, submitLabel, onSubmit, onCancel }:
             <FieldError message={errors.date?.message} />
           </div>
           <div>
-            <Label htmlFor="task-time">Time</Label>
+            <Label htmlFor="task-time">Due time</Label>
             <Input id="task-time" type="time" aria-invalid={!!errors.time} {...register('time')} />
             <FieldError message={errors.time?.message} />
           </div>
