@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import 'react-day-picker/style.css';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-canvas: #f9fafb;
+  --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+
+  --color-fg: #111827;
+  --color-fg-secondary: #4b5563;
+  /* Lightest grey allowed for anything that carries information (4.8:1 on white). */
+  --color-fg-muted: #6b7280;
+  /* Placeholders and disabled only. */
+  --color-fg-faint: #9ca3af;
+
+  --color-primary: #2f6feb;
+  --color-primary-hover: #255fd6;
+  --color-primary-tint: #eef4ff;
+
+  --color-success-bg: #ecfdf3;
+  --color-success: #067647;
+  --color-success-fill: #17b26a;
+  --color-danger-bg: #fef3f2;
+  --color-danger: #b42318;
+  --color-danger-fill: #f04438;
+  --color-overdue: #d92d20;
+  --color-warning-bg: #fffaeb;
+  --color-warning: #b54708;
+  --color-warning-fill: #f79009;
+  --color-neutral-bg: #f3f4f6;
+  --color-neutral: #4b5563;
+
+  --text-meta: 13px;
+  --text-meta--line-height: 18px;
+
+  --shadow-overlay: 0 12px 32px -8px rgb(16 24 40 / 0.18), 0 2px 6px -2px rgb(16 24 40 / 0.08);
+
+  --animate-fade-in: fade-in 150ms ease-out;
+  --animate-pop-in: pop-in 160ms ease-out;
+  --animate-sheet-in: sheet-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px) scale(0.98);
+    }
+  }
+  @keyframes sheet-in {
+    from {
+      transform: translateY(100%);
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+}
+
+.rdp-root {
+  --rdp-accent-color: var(--color-primary);
+  --rdp-accent-background-color: var(--color-primary-tint);
+  --rdp-day-height: 36px;
+  --rdp-day-width: 36px;
+  --rdp-day_button-height: 34px;
+  --rdp-day_button-width: 34px;
+  --rdp-day_button-border-radius: 6px;
+  --rdp-selected-border: 0;
+  --rdp-today-color: var(--color-primary);
+  --rdp-nav-height: 32px;
+  --rdp-nav_button-height: 28px;
+  --rdp-nav_button-width: 28px;
+  font-size: 13px;
+}
+
+.rdp-selected .rdp-day_button {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 500;
+}
+
+.rdp-month_caption {
+  font-size: 14px;
+  font-weight: 600;
+}

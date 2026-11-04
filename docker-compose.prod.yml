@@ -1,0 +1,8 @@
+name: todo-web
+
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3011:80"
